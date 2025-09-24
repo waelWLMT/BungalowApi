@@ -23,9 +23,9 @@ namespace WLMT.Bungalows.Infrastructure.Repositories
         {
             return _dbSet;
         }
-        public async Task<T?> GetByIdAsync(int id, CancellationToken ct = default)
+        public async Task<T?> GetByIdAsync(Guid id, CancellationToken ct = default)
         {
-            return await _dbSet.FirstAsync(e => EF.Property<int>(e, "Id") == id, ct);
+            return await _dbSet.FirstAsync(e => EF.Property<Guid>(e, "Id") == id, ct);
         }
         public async Task<IEnumerable<T>> ListAsync(CancellationToken ct = default)
         {

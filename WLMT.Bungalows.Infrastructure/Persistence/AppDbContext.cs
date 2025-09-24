@@ -17,7 +17,7 @@ namespace WLMT.Bungalows.Infrastructure.Persistence
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Campaign>().HasKey(c => c.Id);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);           
             base.OnModelCreating(modelBuilder);
         }
     }

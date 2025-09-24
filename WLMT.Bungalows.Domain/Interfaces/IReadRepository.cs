@@ -9,7 +9,7 @@ namespace WLMT.Bungalows.Domain.Interfaces
 {
     public interface IReadRepository<T> where T : class
     {
-        Task<T?> GetByIdAsync(int id, CancellationToken ct = default);
+        Task<T?> GetByIdAsync(Guid id, CancellationToken ct = default);
         Task<IEnumerable<T>> ListAsync(CancellationToken ct = default);
         Task<IEnumerable<T>> ListAsync(Expression<Func<T, bool>> predicate, CancellationToken ct = default, params Expression<Func<T, object>>[] includes);
         IQueryable<T> AsQueryable();

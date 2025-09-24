@@ -19,7 +19,7 @@ namespace WLMT.Bungalows.Infrastructure
             //return services;
 
             // Ajouter DbContext
-            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DbConnection")));
+            services.AddDbContext<AppDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
             // Ajouter repositories
            // services.Ad*/dScoped<ICampaignReadRepository, CampaignReadRepository>();
